@@ -1,2 +1,8 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+
+<h1>Log In</h1>
+
+<%= render 'sessions/_form' %>
+<%= render 'sessions/oauth-link' %>
+<br>
+<h3>Don't have an account yet?</h3>
+<%= link_to "Sign up now!", signup_path %>
