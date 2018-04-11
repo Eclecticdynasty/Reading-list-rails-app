@@ -21,12 +21,4 @@ ActiveRecord::Schema.define(version: 20180404210745) do
     t.string "uid"
   end
 
-  create_table "workouts", force: :cascade do |t|
-    t.string "workout"
-    t.string "length"
-    t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
