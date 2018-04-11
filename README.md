@@ -1,24 +1,3 @@
-# README
+# Recipe List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Need to keep track of all those recipes you love? Welcome, Recipe List. It's an app to help you keep a record of Recipes that you like. 
