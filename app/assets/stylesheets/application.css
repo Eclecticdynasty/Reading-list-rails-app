@@ -13,3 +13,85 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+ 
+ @import url('https://fonts.googleapis.com/css?family=Merriweather');
+ @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+ h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+
+ }
+
+ body {
+  font-family: 'Playfair Display', serif;
+  
+ }
+body {
+   
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto;
+    padding-top: 250px;
+    padding-bottom: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    line-height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+
+nav li a {
+  
+  float: left;
+
+}
+
+form {
+  margin: 32px 16px;
+}
+
+
+input::placeholder {
+  font-size: 12px;
+  font-style: italic;
+  padding: 0 6px;
+}
+
+
+
+
+
+.footer {
+  margin: 150px auto;
+  text-align: center;
+}
+
+
+
+
+.field {
+  margin-bottom: 24px;
+}
