@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
-    redirect_to users_path if logged_in?
+    redirect_to user_path if logged_in?
   end
 
   #login through social media or signup form
