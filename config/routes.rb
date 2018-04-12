@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
 
+  resources :recipes
   root 'welcome#home'
 
   get '/auth/facebook/callback' => 'sessions#create'
