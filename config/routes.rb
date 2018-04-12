@@ -2,13 +2,18 @@ Rails.application.routes.draw do
   
   
 
-  resources :recipes
+  #root home controller
   root 'welcome#home'
 
-  get '/auth/facebook/callback' => 'sessions#create'
-
+  
+  #users controller
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+
+  #Nested
+  resources :users, :only => [:show] do
+    resources :recipes, :only => [:new, :create, :show, :index, :edit, :update]
+  end
 
   get '/login', to: 'sessions#new'
 
@@ -16,8 +21,12 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users
+  get '/auth/facebook/callback' => 'sessions#create'
+
+  
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :recipes
 
  
 end
