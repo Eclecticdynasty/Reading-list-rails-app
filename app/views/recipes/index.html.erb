@@ -5,9 +5,10 @@
 
 <h4> Recipes Name  Rating</h4>
 <% @recipes.each do |r| %>
-  <h4><%= link_to r.name, recipe_path(r) %>  | <%= r.rating %></h4>
+  <h4><%= link_to r.name, recipe_path(r) %> 
 <% end %>
 
 <div>
-  <h3>Find by Rating:</h3>
+  <h3>Find by Favorite Recipes:</h3>
+  <%= link_to 'Favorite Recipes', recipes_rating_path %>
 </div>

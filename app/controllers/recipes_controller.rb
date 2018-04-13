@@ -41,7 +41,7 @@ class RecipesController < ApplicationController
   end
 
   def rating
-    @recipes = Recipe.rating
+    @recipes = Recipe.rating(where )
     render 'rating'
   end
 
