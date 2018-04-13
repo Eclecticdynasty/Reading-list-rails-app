@@ -1,10 +1,7 @@
-<h2>Hi there  @<%= current_user.username %></h2>
+<h2>Hi there  <%= current_user.username %></h2>
 
 <div class="links">
   <div class="">
     <%= link_to "View Recipes", user_recipes_path(current_user.id) %>
-  </div>
-  <div class="">
-    <%= link_to "New Recipe", new_user_recipe_path(current_user.id) %>
   </div>
 </div>

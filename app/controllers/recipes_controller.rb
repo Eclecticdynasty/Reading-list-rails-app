@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
   @recipes = Recipe.all
@@ -18,7 +18,8 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
 
     if @recipe.save
-      redirect_to recipe_path @recipe.id
+      redirect_to recipe_path(@recipe.id), flash:{success: "#{@recipe.name} added"}
+
     else
       render 'new'
     end
@@ -36,12 +37,12 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id]).destroy
+    @recipe.delete
     redirect_to recipes_url
   end
 
   def rating
-    @recipes = Recipe.rating(where )
+    @recipes = Recipe.rating.where(rating: 5).order(:name)
     render 'rating'
   end
 

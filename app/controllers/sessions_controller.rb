@@ -9,15 +9,14 @@ class SessionsController < ApplicationController
   def create
     if auth
       @user = User.set_user_from_omniauth(auth['uid'])
-      flash[:alert] = "Invalid email/password combination"
       log_user_in
+      redirect_to recipes_path(@user), flash: {success: "You're logged in through Facebook!"}
     else
       #find user by username
-      @user = User.find_by(username: params[:user][:username])
-      if @user && @user.authenticate(params[:user][:password])
+      @user = User.find_by(username: params[:session][:username])
+      if @user && @user.authenticate(params[:session][:password])
         log_user_in
-        flash[:error] = "You're logged in!"
-        redirect_to user_path(@user)
+        redirect_to recipes_path, flash: {success: "You're logged in!"}
       else
         flash.now[:error] = "Invalid username/password combination"
         render 'sessions/new'

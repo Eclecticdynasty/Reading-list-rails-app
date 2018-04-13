@@ -69,6 +69,23 @@ nav li a {
 
 }
 
+.error_explanation {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(255,0,0, 0.5);
+  border: 1px solid red;
+}
+
+.field_with_errors input{
+  border: 1px solid red !important;
+}
+
+.alert {
+  background-color: rgba(230,245,226, 0.4);
+  text-align: center;
+}
+
+
 form {
   margin: 32px 16px;
 }

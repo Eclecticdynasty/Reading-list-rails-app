@@ -1,14 +1,11 @@
 <h1>All Recipes</h1>
 
-<h4><%= link_to "Add a New Recipe", new_recipe_path %></h4>
 
 
-<h4> Recipes Name  Rating</h4>
+
+
 <% @recipes.each do |r| %>
   <h4><%= link_to r.name, recipe_path(r) %> 
 <% end %>
 
-<div>
-  <h3>Find by Favorite Recipes:</h3>
-  <%= link_to 'Favorite Recipes', recipes_rating_path %>
-</div>
+<h4><%= link_to "Add a New Recipe", new_recipe_path %></h4>

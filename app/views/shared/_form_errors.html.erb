@@ -1,0 +1,14 @@
+<% if @recipe.errors.any? %>
+    <div>
+      <h3>There were some errors:</h3>
+
+      <div class="field">
+        <ul>
+          <% @recipe.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  <% end %>

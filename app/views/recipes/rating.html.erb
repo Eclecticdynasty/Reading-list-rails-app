@@ -8,6 +8,9 @@
   </thead>
   <tbody>
     <% @recipes.each do |recipe| %>
+    <tr>
+      <td> <%= link_to recipe.name, recipes_path %></td></td>
+    </tr>
    
       
     <% end %>

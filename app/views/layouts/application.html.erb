@@ -12,6 +12,9 @@
 
   <body>
     <%= render 'layouts/header' %>
+    <div id="main-container" class="container">
+     <%= yield :form_errors %>
+   </div>
     <%= yield %>
   </body>
 </html>
