@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
   scope :rating, -> { where(rating: 5)}
 
-  validates_presence_of :name, :rating, :instructions 
+  validates_presence_of :name, :rating, :ingredients
   
   accepts_nested_attributes_for :ingredients, reject_if: proc {|attributes| attributes['name'].blank?}, allow_destroy: true
 

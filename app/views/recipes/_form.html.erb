@@ -1,16 +1,26 @@
-<%= form_for @recipe do |f| %>
-  <div class="field">
-    <%= f.label :name, "Recipe's Name" %><br>
-    <%= f.text_field :name %>
-  </div><br>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-  </div><br>
-  <div class="field">
-    <%= f.label :instructions %><br>
-    <%= f.text_field :instructions %>
-  </div><br>
+<%= form_for ([current_user, @recipe]) do |f| %>
+    
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :rating %><br>
+      <%= f.text_field :rating %>
+    </div>
+    <br>
+    <br>
+    <div class="field">
+      <h3>Create Ingredients List</h3>
+      <h5><i>Add Ingredients to List</i></h5>
+      <br>
+      <% 5.times.each do %>
+        <%= f.fields_for :ingredients, @recipe.ingredients.build do |recipe| %>
+          <%= recipe.text_field :name %>
+        <% end %>
+      <% end %>
+    </div>
     <%= f.submit %>
-  </div>
-<% end %> 
+<% end %>

@@ -40,6 +40,11 @@ class RecipesController < ApplicationController
     redirect_to recipes_url
   end
 
+  def rating
+    @recipes = Recipe.rating
+    render 'rating'
+  end
+
 
   private
 
